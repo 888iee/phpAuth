@@ -1,0 +1,9 @@
+.notes {
+    position: relative;
+    top: 3em;
+    left: 20em;
+    background-color: bisque;
+    display: inline-block;
+    width: 10em;
+    text-align: center;
+}

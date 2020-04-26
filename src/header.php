@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auth</title>
+    <link rel="stylesheet" href="css/nav-style.css">
 </head>
 <body>
     
     <header>
-        <nav>
+        <nav class="nav-menu">
             <a href="img/settings.png" alt="settings"></a>
             <ul>
                 <li><a href="index.php">Home</a></li>
             </ul>
-            <div>
+            <div class="login-form">
                 <form action="includes/login.php" method="post">
                     <input type="text" name="id" placeholder="Login ID">
                     <input type="password" name="password" placeholder="Password">
