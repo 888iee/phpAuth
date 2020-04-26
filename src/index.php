@@ -3,9 +3,13 @@
 ?>
     <link rel="stylesheet" href="css/notifications.css">
     <main>
-        
-        <p class="notes">Logged In</p>
-        <p class="notes">Logged Out</p>
+        <?php
+            if(isset($_SESSION['userId'])){
+                echo '<p class="notes">Logged In</p>';
+            } else {
+                echo '<p class="notes">Logged Out</p>';
+            }
+        ?>
     </main>
 
 <?php
