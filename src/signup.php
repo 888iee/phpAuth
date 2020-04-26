@@ -2,6 +2,7 @@
     require "header.php";
 ?>
 <link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="css/input.css">
 <main>
     <div class="main-form">
         <section>
