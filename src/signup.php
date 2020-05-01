@@ -17,7 +17,6 @@
                         echo '<p class=signup-error>Token ist falsch!</p>';
                     } elseif ($_GET['error'] == "invalidid"){
                         echo '<p class=signup-error>ID ist falsch!</p>';
-                        echo '<p>'.$_GET['authToken'].'</p>';
                     } elseif ($_GET['error'] == "usertaken"){
                         echo '<p class=signup-error>ID existiert bereits!</p>';
                     } elseif ($_GET['error'] == "pwnomatch"){

@@ -41,6 +41,10 @@ button, .btn-link {
             transition-duration: 0.15s;
     cursor: pointer;
     outline: none;
+    margin-left: 4px;
+    margin-top: .1em;
+    padding: .1em;
+    text-decoration: none;
 }
 button:hover {
      color: black;
