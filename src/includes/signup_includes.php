@@ -8,22 +8,28 @@ if (isset($_POST['signup-submit'])) {
     $password = $_POST['password'];
     $passwordRepeat = $_POST['password-repeat'];
 
+    // empty check
     if (empty($authToken) || empty($id) || empty($password) || empty($passwordRepeat)) {
         header("Location: ../signup.php?error=emptyfields&id=".$id."&authToken=".$authToken);
         exit();
+    // regex token & id
     } elseif (!preg_match("/^#[a-zA-Z]{1,10}[a-zA-Z0-9!\"§$%&\/()=?ß,.;:]{9}$/", $authToken) 
-      && !preg_match("/^[a-zA-Z0-9]{3,}$/", $id)) {
+    && !preg_match("/^[a-zA-Z0-9]{3,}$/", $id)) {
         header("Location: ../signup.php?error=invaliddata");
         exit();
+    // regex token
     } else if (!preg_match("/^#[a-zA-Z]{1,10}[a-zA-Z0-9!\"§$%&\/()=?ß,.;:]{9}$/", $authToken)) {
         header("Location: ../signup.php?error=invalidtoken&id=".$id);
         exit();
+    // regex id
     } else if (!preg_match("/^[a-zA-Z0-9]{3,}$/", $id)) {
         header("Location: ../signup.php?error=invalidid&authToken=".$authToken);
         exit();
+    // pw match
     } elseif ($password !== $passwordRepeat) {
         header("Location: ../signup.php?error=pwnomatch&id=".$id."&authToken=".$authToken);
         exit();
+    // db stuff
     } else {
         $sql = "SELECT uid FROM users WHERE uid=?;";
         $stmt = mysqli_stmt_init($conn);
