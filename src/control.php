@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="css/notifications.css">
     <main>
         <?php
-            if(isset($_SESSION['ROLE'])){
-                echo '<p class="notes">Admin</p>';
+            if($_SESSION['ROLE'] == "ADMIN"){
+                echo '<p class="notes">'.$_SESSION['ROLE'].'</p>';
             } else {
                 header("Location: noadmin.php");
                 exit();
