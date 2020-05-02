@@ -1,8 +1,10 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
 .main-form {
-    position: relative;
-    top: 5em;
-    left: 20em;
-    width: 33%;
     background: rgb(23,102,144);
     padding: 1em;
     border-radius: .3em;
@@ -14,3 +16,6 @@
     grid-row-gap: .8em;
 }
 
+input {
+    min-height: 2.6em;
+}
