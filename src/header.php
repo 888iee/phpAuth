@@ -7,40 +7,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auth</title>
-    <link rel="stylesheet" href="css/nav-style.css">
-    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
     
     <header>
-        <nav class="nav-menu">
-            <!-- <img src="img/settings.png" alt="settings"> -->
-            <?php 
-                if(isset($_SESSION['userId'])) {
-                    echo '<ul><li><a href="index.php">Home</a></li></ul>';
-                }
-            ?>
-            <div class="login-form">
-                <?php
-                    $id = isset($_GET['id'])?$_GET['id']:'';
-                    if(isset($_SESSION['userId'])){
-                        echo '<form action="includes/logout_includes.php" method="post">
-                        <button type="submit" name="logout-submit">Logout</button>
-                        </form>';
-
-                    } else {
-                        echo '<form action="includes/login_includes.php" method="post">
-                        <input type="text" name="id" placeholder="Login ID" value="'.$id.'">
-                        <input type="password" name="password" placeholder="Password">
-                        <button type="submit" name="login-submit">Login</button>
-                        </form>
-                        <a href="signup.php" class="btn-link">Sign Up</a>';
+        <nav>
+            <div class="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="original-header">
+                <?php 
+                    if(isset($_SESSION['userId'])) {
+                        echo '<ul class="nav-links">
+                        <li>
+                            <a href="control.php" class="btn-link">Controls</a>
+                        </li>
+                    </ul>';
                     }
                 ?>
-                
+                <div class="login-form">
+                    <?php
+                        $id = isset($_GET['id'])?$_GET['id']:'';
+                        if(isset($_SESSION['userId'])){
+                            echo '<form action="includes/logout_includes.php" method="post">
+                            <button type="submit" name="logout-submit">Logout</button>
+                            </form>';
+
+                        } else {
+                            echo '                    <form class="login" action="includes/login_includes.php" method="post">
+                            <div class="txt-fields">
+                                <input type="text" name="id" placeholder="Login ID" value="'.$id.'">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                            <button type="submit" name="login-submit">Login</button>
+                            <a href="signup.php" class="btn-link">Sign Up</a>
+                            </form>';
+                        }
+                    ?>
+                </div>
             </div>
         </nav>
     </header>
 
 </body>
+<script>
+    const burgerMenu = document.querySelector(".burger-menu");
+    const originalHeader = document.querySelector(".original-header");
+    burgerMenu.addEventListener("click", () => originalHeader.classList.toggle("open"))
+</script>
 </html>

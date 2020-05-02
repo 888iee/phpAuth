@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(2, 65, 65);
+}
+nav {
+    height: 10vh;
+    background-color: teal;
+}
+.original-header {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links, .space, .login-form {
+    display: flex;
+}
+
+.login-form {
+    height: 100%;
+    flex: 1.4;
+    justify-content: flex-end;
+    /* background: grey; */
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+.btn-link {
+    text-decoration: none;
+    color: whitesmoke;
+    white-space: normal;
+    /* padding-top: 65px;   */
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+button, .btn-link {
+    text-align: center;
+    height: 4vh;
+    font-family: 'Tahoma';
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: .4em;
+    min-width: 80px;
+    margin-left: .3em;
+    padding: .3em;
+    border: none;
+    color: whitesmoke;
+    background: #34a3ce;
+    -webkit-transition: color 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
+    -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+    cursor: pointer;
+    outline: none;
+}
+button:hover, .btn-link:hover {
+     color: black;
+}
+form > :last-child {
+    margin-right: 10px;
+}
+
+li > a {
+    margin-left: 10px;
+}
+input {
+    font-family: 'Tahoma';
+    border: none;
+    border-radius: .3em;
+    padding: .2em;
+    height: 4vh;
+}
+
+@media screen and (max-width: 640px) {
+    .original-header {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+    }
+    li {
+        list-style-type: none;
+    }
+    .login-form, .login, .txt-fields, .nav-links {
+        background: teal;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-links {
+        flex: 1;
+        margin-top: 10px;
+    }
+    input, button, .btn-link {
+        margin-top: 10px;
+    }
+    .line {
+        width: 33px;
+        background: white;
+        height: 5px;
+        margin-top: 3px;
+        border-radius: .7em;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .burger-menu {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 3;
+    }
+
+    .original-header {
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all .2s ease-out;
+    }
+    
+    .original-header.open {
+        clip-path: circle(2000px at 100% -10%);
+        -webkit-clip-path: circle(2000px at 100% -10%);
+        transition: all .2s ease-out;
+        z-index: 2;
+    }
+
+    form > :last-child {
+        margin-right: 0;
+    }
+}

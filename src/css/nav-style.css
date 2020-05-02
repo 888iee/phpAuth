@@ -1,3 +1,6 @@
+body {
+    font-family: 'Tahoma';
+}
 .nav-menu {
     position: fixed;
     padding-left: 0;
@@ -27,7 +30,7 @@ ul {
 }
 
 button, .btn-link {
-    font-family: "AsapSemiBold";
+    /* font-family: "AsapSemiBold"; */
     border-radius: 5px;
     background: #34a3ce;
     border: none;

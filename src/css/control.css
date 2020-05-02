@@ -1,0 +1,28 @@
+.button {
+    top: 50%;
+    left: 50%;
+    font-family: "AsapSemiBold";
+    margin: -20px -7em; 
+    position:relative;
+    width: 14em;
+    position: relative;
+    border-radius: 15px;
+    background: #34a3ce;
+    border: none;
+    color: whitesmoke;
+    height: 2.3em;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    -webkit-box-shadow: inset 0 -5px 0 #2c8cbd, -5px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 -5px 0 #2c8cbd, -5px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: color 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
+    -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+        color: black;
+}
