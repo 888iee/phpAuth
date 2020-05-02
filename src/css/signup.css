@@ -5,7 +5,7 @@ main {
 }
 
 .main-form {
-    background: rgb(23,102,144);
+    background: teal;
     padding: 1em;
     border-radius: .3em;
 }
