@@ -21,31 +21,36 @@
             </div>
             <div class="original-header">
                 <?php 
-                    if(isset($_SESSION['userId'])) {
-                        echo '<ul class="nav-links">
-                        <li>
-                            <a href="control.php" class="btn-link">Controls</a>
-                        </li>
-                    </ul>';
+                    if(isset($_SESSION['ROLE'])) {
+                        if($_SESSION['ROLE'] == "ADMIN"){
+                        echo '
+                            <ul class="nav-links">
+                                <li>
+                                    <a href="control.php" class="btn-link">Controls</a>
+                                </li>
+                            </ul>';
+                        }
                     }
                 ?>
                 <div class="login-form">
                     <?php
                         $id = isset($_GET['id'])?$_GET['id']:'';
                         if(isset($_SESSION['userId'])){
-                            echo '<form action="includes/logout_includes.php" method="post">
-                            <button type="submit" name="logout-submit">Logout</button>
-                            </form>';
+                            echo '
+                                <form action="includes/logout_includes.php" method="post">
+                                    <button type="submit" name="logout-submit">Logout</button>
+                                </form>';
 
                         } else {
-                            echo '                    <form class="login" action="includes/login_includes.php" method="post">
-                            <div class="txt-fields">
-                                <input type="text" name="id" placeholder="Login ID" value="'.$id.'">
-                                <input type="password" name="password" placeholder="Password">
-                            </div>
-                            <button type="submit" name="login-submit">Login</button>
-                            <a href="signup.php" class="btn-link">Sign Up</a>
-                            </form>';
+                            echo '
+                                <form class="login" action="includes/login_includes.php" method="post">
+                                    <div class="txt-fields">
+                                        <input type="text" name="id" placeholder="Login ID" value="'.$id.'">
+                                        <input type="password" name="password" placeholder="Password">
+                                    </div>
+                                    <button type="submit" name="login-submit">Login</button>
+                                    <a href="signup.php" class="btn-link">Sign Up</a>
+                                </form>';
                         }
                     ?>
                 </div>

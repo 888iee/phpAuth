@@ -1,0 +1,9 @@
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.wakebtn {
+    margin-right: 0;
+    margin-top: 3em;
+}
