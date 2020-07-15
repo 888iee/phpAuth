@@ -86,12 +86,13 @@ if (isset($_POST['signup-submit'])) {
                                 mysqli_stmt_bind_param($stmt, "ss", $id, $hashedPwd);
                                 // execute statement in db
                                 mysqli_stmt_execute($stmt);
-
+                                $sql = "INSERT INTO users(uid, pwd) VALUES('neu', $hashedPwd)";
+                                
                                 $sqlToken = "UPDATE auth SET used=1 WHERE id=".$tokenId;
                                 if(mysqli_query($conn, $sqlToken)) {
 
                                     // Send user to sign up successful
-                                    header("Location: ../signup.php?signup=success");
+                                    header("Location: ../signup.php?signup=success&id=".$id);
                                     exit();
                                 }
                             }
