@@ -49,8 +49,8 @@
                                         <input type="password" name="password" placeholder="Password">
                                     </div>
                                     <button type="submit" name="login-submit">Login</button>
-                                    <a href="signup.php" class="btn-link">Sign Up</a>
-                                </form>';
+                                    /* <a href="signup.php" class="btn-link">Sign Up</a>  not included in live version */
+                                    </form>';
                         }
                     ?>
                 </div>
