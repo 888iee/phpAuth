@@ -8,5 +8,8 @@ $dbName = "wol";
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
 if (!$conn) {
-    die("Connection failed: ".mysqli_connect_error());
+    // TODO pipe mysqli error to logfile 
+    // .mysqli_connect_error()
+    die("Connection failed!");
+    header("Location:../index.php");
 }
