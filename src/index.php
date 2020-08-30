@@ -6,18 +6,16 @@
     <link rel="stylesheet" href="css/index.css">
     <main>
         <?php 
-            if(isset($_SESSION['ROLE'])) {
-                if($_SESSION['ROLE'] == "ADMIN"){ 
-                    echo '<h1 class="notes">Control Panel</h1>';
-                    echo '
-                        <section>
-                            <form action="includes/wake_includes.php" method="post">
-                                <button class="wakebtn" type="submit">
-                                    Wake Server
-                                </button>
-                            </form>
-                        </section>';
-                }
+            if(isset($_SESSION['userId'])) {
+                echo '<h1 class="notes">Control Panel</h1>';
+                echo '
+                    <section>
+                        <form action="includes/wake_includes.php" method="post">
+                            <button class="wakebtn" type="submit">
+                                Wake Server
+                            </button>
+                        </form>
+                    </section>';
             }
         ?>
 
